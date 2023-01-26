@@ -19,6 +19,7 @@ namespace ProcessInjection.Utils
             for (int i = 0; i < cipher.Length; i++)
             {
                 xored[i] = (byte)(cipher[i] ^ key[i % key.Length]);
+                //xored[i] = (byte)(cipher[i] ^ 0xff); 
             }
 
             return xored;
